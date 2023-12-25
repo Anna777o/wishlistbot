@@ -1,0 +1,86 @@
+version: "3.1"
+
+stories:
+
+- story: start chat
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- story: create list
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: create_wihlist
+  - action: utter_prep
+  - intent: add_gift
+  - action: action_create_list
+  - intent: show_list
+  - action: action_show_list
+
+- story: show
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: show_list2
+  - action: utter_show_list2
+  - intent: show_list
+  - action: action_show_list
+
+- story: choose
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: show_list
+  - action: action_show_list
+  - intent: choose_opt2
+  - action: utter_choose2
+  - intent: choose_opt
+  - action: action_choose
+
+- story: choose2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_opt
+  - action: action_choose
+
+- story: recomend
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: show_list
+  - action: action_show_list
+  - intent: rec_opt
+  - action: action_rec
+
+- story: recomend2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: rec_opt
+  - action: action_rec
+
+- story: change
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: change_list
+  - action: action_change
+
+- story: delete
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: del_from_list
+  - action: action_del
+
+- story: remind
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: remind2
+  - action: utter_remind2
+  - intent: remind
+  - action: action_remind
