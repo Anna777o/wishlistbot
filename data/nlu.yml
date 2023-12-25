@@ -1,0 +1,122 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - прив
+    - привет
+    - старт
+    - начать
+    - здравствуй
+    - здравствуйте
+    - добрый день
+    - добрый вечер
+    - доброе утро
+    - йоу
+    - начнем
+    - вперед
+
+- intent: goodbye
+  examples: |
+    - пока
+    - до свидания
+    - увидимся позже
+
+
+- intent: create_wihlist
+  examples: |
+    - хочу создать вишлист
+    - создай
+    - создать вишлист
+    - сделать вишлист
+    - создаю вишлист
+- intent: add_gift
+  examples: |
+    - добавляю в вишлист [мозаику](gift) для @ananwn с ценой [1000](price)
+    - добавляю в вишлист [игру](gift) для @jcdvjrv с ценой [3000]{(price)
+    - добавляю в вишлист [костюм](gift) для @esvjj с ценой [1000](price)
+    - добавляю в список [коробку](gift) для @naneme с ценой [5000](price)
+    - добавляю в список [ручку](gift) для @vfvvrnv с ценой [100](price)
+    - добавляю в список [шапку](gift) для @ananwn с ценой [1500](price)
+    - добавляю [цветы](gift) для @ananwn с ценой [700](price)
+    - добавляю [альбом тхт](gift) для @ananwn с ценой [2500](price)
+    - добавляю [букет](gift) для @ananwn с ценой [2000](price)
+    - добавь [ковер](gift) для @ananwn с ценой [2450](price)
+    - добавь [машину](gift) для @ananwn с ценой [10000](price)
+    - добавь [книгу](gift) для @vvhv с ценой [500](price)
+    - включи [рюкзак](gift) для @wifenrvk с ценой [1500](price)
+    - включи [игру](gift) для @ananwn с ценой [800](price)
+
+- intent: show_list
+  examples: |
+    - покажи вишлист @ananwn
+    - покажи список @vfvvrnv
+    - вишлист @naneme
+
+- intent: choose_opt
+  examples: |
+    - хочу выбрать [коробку](gift) у @vfvvrnv
+    - хочу выбрать [альбом](gift) у @naneme
+    - хочу выбрать [игру](gift) у @ananwn
+    - хочу выбрать [конфеты](gift) у @ananwn
+    - выбираю [цветы](gift) у @anafvmb
+    - выбираю [игру](gift) у @vfvvrnv
+    - выбираю [мармелад](gift) у @naneme
+    - буду дарить [букет](gift) @ananwn
+    - буду дарить [альбом](gift) @vfvvrnv
+    - буду дарить [книгу](gift) @ananwn
+    - выбираю подарок [машину](gift) у @naneme
+    - выбираю в подарок [маску](gift) у @vfvvrnv
+
+
+- intent: rec_opt
+  examples: |
+    - порекомендуй подарок для @ananwn за [2000](price)
+    - порекомендуй подарок для @fjfj за [1000](price)
+    - порекомендуй подарок для @nsnsn за [2500](price)
+    - подскажи для @vkfvfvk за [555](price)
+    - что подарить @ananwn за [6666](price)
+    - что дарить @ananwn за [1255](price)
+
+- intent: change_list
+  examples: |
+    - хочу изменить [книгу](gift) у @njvfjfv  на [альбом](gift2) с ценой [1000](price)
+    - изменяю [альбом](gift) у @vkfvfvk на [крем](gift2) с ценой [2000](price)
+    - хочу заменить [цветы](gift) у @njvfjfv на [книгу](gift2) с ценой [1256](price)
+    - заменяю [конфеты](gift) у @vkfvfvk на [маску](gift2) с ценой [5466](price)
+    - хочу поменять [игру](gift) у @njvfjfv на [букет](gift2) с ценой [902](price)
+    - меняю [букет](gift) у @vkfvfvk на [коробку](gift2) с ценой [3022](price)
+
+- intent: del_from_list
+  examples: |
+    - хочу удалить [альбом](gift) у @ananwn
+    - хочу удалить [книгу](gift) у @njvfjfvf
+    - хочу удалить [шоколад](gift) у @vkfvfvk
+    - удаляю [цветы](gift) у @ananwn
+    - удаляю [игрушку](gift) у @njvfjfv
+    - удаляю [букет](gift) у @vkfvfvk
+    - хочу убрать [маску](gift) у @ananwn
+    - убираю [крем](gift) у @njvfjfv
+
+- intent: remind
+  examples: |
+    - напомни что я выбрал для @njvfjfv
+    - напомни что я дарю @njvfjfv
+    - напомни что я собирался дарить @njvfjfv
+    - что я дарю для @njvfjfv
+    - что я выбрал для @njvfjfv
+
+- regex: gift
+  examples: |
+    - [Букет цветов](gift)
+    - [Кошелек](gift)
+    - [Часы](gift)
+    - [Кольцо](gift)
+    - [альбом тхт](gift)
+    - [чайник](gift)
+    - [книга про котов](gift)
+    - [подписка](gift)
+    - [костюм динозавра](gift)
+    - [шоколад с орехами](gift)
+    - [кофе](gift)
+    - [купон](gift)
