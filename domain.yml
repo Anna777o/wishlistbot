@@ -1,0 +1,105 @@
+version: "3.1"
+
+intents:
+- greet
+- goodbye
+- create_wihlist
+- show_list
+- choose_opt
+- rec_opt
+- change_list
+- del_from_list
+- remind
+- add_gift
+- remind2
+- show_list2
+- choose_opt2
+entities:                     # Список сущностей
+- gift                        # сущность: подарок
+- price                       # сущность: цена подарка
+
+slots:                            # Список слотов
+  gift:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: gift
+
+  gift2:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: gift2
+
+  user_name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: user_name
+
+  price:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: price
+
+  size:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: size
+
+  taken:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: taken
+
+
+actions:                          # Список действий
+- action_create_list
+- action_show_list
+- action_choose
+- action_rec
+- action_change
+- action_del
+- action_remind
+
+responses:                        # Список ответов
+  utter_greet:
+    - buttons:
+      - payload: /create_wihlist
+        title: Создать вишлист
+      - payload: /choose_opt2
+        title: Выбрать подарок
+      - payload: /remind2
+        title: Напомнить о подарке
+      - payload: /show_list2
+        title: Посмотреть вишлист
+      button_type: vertical
+      text: "Привет! Я могу создать вишлист или помочь выбрать подарок"
+  utter_prep:
+     - text: "Введите подарок по шаблону 'добавь название для @свой ник с ценой примерная цена';
+           Для просмора вишлиста введите 'покажи вишлист @ник';
+           Для изменения вишлиста введите какой подарок заменить, свой @ник на что и цену;
+           Для удаления подарка из вишлиста введите название подарка и свой ник"
+  utter_show_list:
+    - text: "Для просмора вишлиста введите ник"
+  utter_show_list2:
+    - text: "Для просмотра вишлиста введите 'покажи вишлист @ник'"
+  utter_remind2:
+    - text: "Для просмотра напоминания введите 'напомни что я дарю @ник'"
+  utter_choose2:
+    - text: "Для выбора подарка введите 'выбираю название у @ник';
+    для запроса рекомендации 'что дарить @ник за цену'"
+  utter_rules:
+    - text: "Я могу создать вишлист или помочь выбрать подарок,Для просмора вишлиста введите ник;Для изменения вишлиста введите какой подарок заменить, на что, свой ник и цену;Для удаления подарка из вишлиста введите название подарка и свой ник"
+session_config:                   # Параметры сессии
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
